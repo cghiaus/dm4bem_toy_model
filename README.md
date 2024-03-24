@@ -18,3 +18,4 @@ Detailed information:
     - _FRA_Lyon.074810_IWEC.epw_: EnergyPlus weather file ([link](https://cghiaus.github.io/dm4bem_book/tutorials/01WeatherData.html)).
 - _dm4bem.py_: Python module;
 - _pd05simulation.py_: example of application ([link](https://cghiaus.github.io/dm4bem_book/tutorials/pd05simulation.html)).
+- *run_pd05simulation.ipynb*: Jupyter notebook to run the script _pd05simulation.py_.

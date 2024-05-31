@@ -19,3 +19,10 @@ Detailed information:
 - _dm4bem.py_: Python module;
 - _pd05simulation.py_: example of application ([link](https://cghiaus.github.io/dm4bem_book/tutorials/pd05simulation.html)).
 - *run_pd05simulation.ipynb*: Jupyter notebook to run the script _pd05simulation.py_.
+
+## Run `pd05simulation.py` script
+
+Alternatives to run the Python script:
+1. Open `run_pd05simulation.ipynb` and __Restart the kernel and run all cells__.
+2. Open _Console_ and run the command `run pd05simulation.py` or `exec(open('pd05simulation.py').read())`. Press _Shift / Enter_ to run the command.
+3. Open _Terminal_ and execute the command `...:~$ python pd05simulation.py`. Note that only text will be displayed in the terminal.

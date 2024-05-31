@@ -144,7 +144,7 @@ input_data_set = input_data_set.resample(
 u = dm4bem.inputs_in_time(us, input_data_set)
 
 # initial conditions
-θ0 = 20                      # initial temperatures
+θ0 = 20.0                   # initial temperatures
 θ_exp = pd.DataFrame(index=u.index)
 θ_exp[As.columns] = θ0      # Fill θ with initial valeus θ0
 

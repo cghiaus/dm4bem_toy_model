@@ -14,11 +14,16 @@ Detailed information:
     - _TC0.csv, ... , TC3.csv_: thermal circuits;
     - _wall_types.csv_: composition of walls ([link](https://cghiaus.github.io/dm4bem_book/tutorials/pd01wall2TC.html));
     - _wall_out.csv_: data for specific wall of _wall_type_ ([link](https://cghiaus.github.io/dm4bem_book/tutorials/pd01wall2TC.html#walls-data)).
+- __bldg2__: same description of the building as in __bldg__ folder but the space discretization is thinner (10 meshes per layer) in _wall_types.csv_.
 - __weather_data__:
     - _FRA_Lyon.074810_IWEC.epw_: EnergyPlus weather file ([link](https://cghiaus.github.io/dm4bem_book/tutorials/01WeatherData.html)).
-- _dm4bem.py_: Python module;
-- _pd05simulation.py_: example of application ([link](https://cghiaus.github.io/dm4bem_book/tutorials/pd05simulation.html)).
-- *run_pd05simulation.ipynb*: Jupyter notebook to run the script _pd05simulation.py_.
+- __Pyhton scripts__:
+    - _dm4bem.py_: Python module;
+    - _pd05simulation.py_: example of application ([link](https://cghiaus.github.io/dm4bem_book/tutorials/pd05simulation.html)).
+    - _toy_model_house.py_: same example of application ([link](https://cghiaus.github.io/dm4bem_book/tutorials/pd05simulation.html)) with code structured in functions on level of abstractions.
+- __Jupyter notebooks:__
+    - *run_pd05simulation.ipynb*: run the script _pd05simulation.py_.
+    - *toy_model_house.ipynb*: uses _toy_model_house.py_.
 
 ## Run `pd05simulation.py` script
 

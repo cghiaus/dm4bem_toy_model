@@ -18,11 +18,10 @@ import dm4bem
 def assembled_thermal_circuit_from_folder(folder_bldg='bldg'):
     """
     Obtain an assembled thermal circuit from a folder containing:
-
-        TC*.csv             thermal circuits
-        wall_types.csv      descrption of wall types
-        walls_out.csv       instances of walls based on wall_types
-        assembly_lists.csv  the assembling of walls and TC
+        - TC*.csv             thermal circuits
+        - wall_types.csv      description of wall types
+        - walls_out.csv       instances of walls based on wall_types
+        - assembly_lists.csv  the assembling of walls and TC
 
     Parameters
     ----------

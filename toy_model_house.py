@@ -22,7 +22,7 @@ def assembled_thermal_circuit_from_folder(folder_bldg='bldg'):
         TC*.csv     thermal circuits
         wall_types.csv      descrption of wall types
         walls_out.csv       instances of walls based on wall_types
-        assemly_lists.csv   the assembling of walls and TC
+        assembly_lists.csv  the assembling of walls and TC
 
     Parameters
     ----------

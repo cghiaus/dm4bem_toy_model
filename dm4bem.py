@@ -997,8 +997,8 @@ def bldg2TCd(folder_path, TC_auto_number):
         - node indexes: q; e.g. c1_q2 for TC1 node 2.
 
     How to access of disassambled thermal circuit TCd:
-        - a circuit: TCd[1]
-        - an element of the circuit: TCd[1]['A']
+        - a circuit: TCd[1] or TCd['circuit_name']
+        - an element of the circuit: TCd[1]['A'] or TCd['circuit_name']
     """
 
     file_path = os.path.join(folder_path, "wall_types.csv")

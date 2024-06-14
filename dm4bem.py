@@ -955,11 +955,11 @@ def bldg2TCd(folder_path, TC_auto_number):
         Disassembled thermal circuits. The number of the thermal circuit TC
         in the disassembled thermal circuit TCd is the number of walls in file
         `walls_in.csv`, `walls_out.csv`, `walls_generic.csv` plus the number of
-        files describing the thermal circuits TC_.csv.
+        files describing the thermal circuits TC_*.csv.
 
         Indexes of TC in TCd:
-            - w for walls; e.g. w2_n1 for wall 2 node 1
-            - c for thermal circuits; e.g. c1_b2 for circuit TC1 branch 2
+            - w for walls; e.g. w2_θ1 for wall 2 node 1
+            - c for thermal circuits; e.g. c1_q2 for circuit TC1 branch 2
 
         Each circuit is a dictionary:
             - A: DataFrame, incidence matrix;
@@ -967,8 +967,8 @@ def bldg2TCd(folder_path, TC_auto_number):
             - C: Series, diagonal of the capacity matrix;
             - b: Series, vector of temperature sources on branches;
             - f: Series, vector of flow sources in nodes;
-        with indexes `b` for branches, e.g. w0_b1 for wall_0 branch_1,
-        and `n` for nodes, e.g. c1_n2 for circuit TC1 node 2.
+        with indexes `q` for branches, e.g. w0_q1 for wall_0 branch_1,
+        and `θ` for nodes, e.g. c1_θ2 for circuit TC1 node 2.
 
     Description of the folder containing the disassembled thermal circuit:
         - Assembly_matrix: pairs of nodes that are in common in the assembled
@@ -989,12 +989,12 @@ def bldg2TCd(folder_path, TC_auto_number):
         - walls_in, walls_out, walls_generic: see wall2TC()
 
     Description of indexes of thermal circuits TC:
-        - walls: w#_, where # is the wall number (ID); e.g. w0_b0 or w0_n0
-        - TC: c#_, where # is the TC number; e.g. c1_n0
+        - walls: w#_, where # is the wall number (ID); e.g. w0_q0 or w0_θ0
+        - TC: c#_, where # is the TC number; e.g. c1_θ0
 
     Indexes of branches and nodes:
-        - branch indexes: b; e.g. w0_b0 for wall 0 branch 0
-        - node indexes: n; e.g. c1_n2 for TC1 node 2.
+        - branch indexes: q; e.g. w0_q0 for wall 0 branch 0
+        - node indexes: q; e.g. c1_q2 for TC1 node 2.
 
     How to access of disassambled thermal circuit TCd:
         - a circuit: TCd[1]

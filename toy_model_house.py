@@ -665,7 +665,8 @@ def simulation(
     # Temperature ans flow-rate sources
     input_data_set = sources_in_time(file_weather,
                                      date_start,
-                                     date_end)
+                                     date_end,
+                                     folder_bldg)
 
     # Resample hourly data to time step dt
     input_data_set = input_data_set.resample(

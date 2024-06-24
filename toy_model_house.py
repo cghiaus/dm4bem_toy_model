@@ -14,6 +14,77 @@ import time
 
 import dm4bem
 
+"""
+Toy model house:
+https://cghiaus.github.io/dm4bem_book/tutorials/02_2_0Toy.html
+
+Hierarchy diagram
+
+1. assembled_thermal_circuit_from_folder(folder_bldg)
+    - Reads the thermal circuits and wall descriptions from files in
+    `folder_bldg`.
+    - Returns a dictionary representing the thermal circuit (TC).
+
+2. modify_param_thermal_circuit(TC, controller, indoor_air_capacity,
+    glass_capacity, insulation_width_new, folder_bldg)
+    - Modifies parameters (conductances and capacities) of the thermal
+    circuit `TC`.
+    - Returns the modified thermal circuit (TC).
+
+3. time_step(As)
+    - Finds the time step from the eigenvalues of the state matrix `As`.
+    - Returns the time step (dt).
+
+4. sources_in_time(file_weather, date_start, date_end, folder_bldg)
+    - Generates temperature and flow-rate sources in time from `date_start`
+    to `date_end`.
+    - Returns a DataFrame with the input data set.
+
+5. Euler_explicit(θ0, As, Bs, Cs, Ds, u, dt)
+    - Performs numerical integration of the state-space model using
+    Euler explicit method.
+    - Returns a DataFrame with the output temperatures in time (y).
+
+6. control_sys_response(θ0, As, Bs, Cs, Ds, u, dt)
+    - Performs numerical integration of the state-space model using
+    the control system's ODE solver.
+    - Returns a DataFrame with the output temperatures in time (y).
+
+7. plot_simulation_in_time_pd(dt, input_data_set, y, q_HVAC)
+    - Plots the simulation results in time using pandas DataFrames and Series.
+    - No return value.
+
+8. plot_simulation_in_time_np(dt, input_data_set, y, q_HVAC)
+    - Plots the simulation results in time using numpy arrays.
+    - No return value.
+
+9. print_results(dt, input_data_set, y, q_HVAC)
+    - Prints the simulation results including mean, min, and
+    max temperatures, max load, and energy consumption.
+    - No return value.
+
+10. simulation( ... )
+    - Simulates in time.
+    - Calls:
+        - assembled_thermal_circuit_from_folder()
+        - modify_param_thermal_circuit()
+        - dm4bem.tc2ss(TC)
+        - time_step()
+        - sources_in_time()
+        - input_data_set.resample()
+        - dm4bem.inputs_in_time()
+        - Euler_explicit()
+        - control_sys_response()
+        - plot_simulation_in_time_pd()
+        - plot_simulation_in_time_np()
+        - print_results()
+    - Returns None.
+
+11. main()
+    - Provides data and calls simulation( ... ).
+    - Returns None.
+"""
+
 
 def assembled_thermal_circuit_from_folder(folder_bldg='bldg'):
     """
